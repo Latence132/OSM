@@ -3,18 +3,36 @@ const resolve = (dir) => require('path').join(__dirname, dir)
 
 module.exports = {
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
     title: 'osm',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js + Vuetify.js project' }
+    meta: [{
+        charset: 'utf-8'
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Nuxt.js + Vuetify.js project'
+      }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
+    link: [{
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
+      },
+      // {
+      //   rel: 'stylesheet',
+      //   href: 'https://unpkg.com/leaflet@1.0.3/dist/leaflet.css'
+      // }
     ]
   },
   plugins: ['~/plugins/vuetify.js'],
@@ -22,12 +40,15 @@ module.exports = {
     '~/assets/style/app.styl'
   ],
   /*
-  ** Customize the progress bar color
-  */
-  loading: { color: '#3B8070' },
+   ** Customize the progress bar color
+   */
+  loading: {
+    color: '#3B8070'
+  },
+  // modules: ['nuxt-leaflet'],
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     babel: {
       plugins: [
@@ -44,9 +65,9 @@ module.exports = {
     ],
     extractCSS: true,
     /*
-    ** Run ESLint on save
-    */
-    extend (config, ctx) {
+     ** Run ESLint on save
+     */
+    extend(config, ctx) {
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
