@@ -2,7 +2,7 @@
 <template>
   <div>
     <no-ssr>
-      <div id="mapid" style="height: 100%">
+      <div id="mapid" style="height: 100%; width: 900px; height: 400px;">
           <v-map :zoom="zoom" :center="center">
               <v-tilelayer :url="url" :attribution="attribution"></v-tilelayer>
               <v-marker :lat-lng="marker"></v-marker>
@@ -24,7 +24,7 @@ if (process.browser) {
 
 // import { L } from 'leaflet'
 export default {
-  layout: 'simple',
+  layout: 'default',
   head: {
     link: [
       {
